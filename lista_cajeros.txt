@@ -1,0 +1,3 @@
+['Identificador_del_cajero', 'AAA1', 'Billetes_de_100', 10, 'Billetes_de_50', 10, 'Billetes_de_20', 10, 'Billetes_de_10', 10, 'Billetes_de_5', 10, 'Billetes_de_2', 10, 'Billetes_de_1', 10]
+['Identificador_del_cajero', 'BBB1', 'Billetes_de_100', 1, 'Billetes_de_50', 1, 'Billetes_de_20', 1, 'Billetes_de_10', 1, 'Billetes_de_5', 1, 'Billetes_de_2', 1, 'Billetes_de_1', 1]
+['Identificador_del_cajero', 'GOK2424', 'Billetes_de_100', 15, 'Billetes_de_50', 10, 'Billetes_de_20', 22, 'Billetes_de_10', 5, 'Billetes_de_5', 30, 'Billetes_de_2', 20, 'Billetes_de_1', 10]

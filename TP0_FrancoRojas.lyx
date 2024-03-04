@@ -1,0 +1,1229 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\size larger
+Instituto Tecnológico de Costa Rica
+\size default
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+Área Académica de Ingeniería en Computadores Programa de Licenciatura en
+ Ingeniería en Computadores 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+CE1102 - Taller de introducción a la programación
+\end_layout
+
+\begin_layout Standard
+\align center
+Tarea Programada 0: Sistema Bancario
+\end_layout
+
+\begin_layout Standard
+\align center
+Profesor: Saúl Calderón Ramírez 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Estudiantes: Franco Vinicio Rojas Lagos
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Primer semestre 2022
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Introducción
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+En este trabajo se procederá a crear un algoritmo que simule los procesos
+ de un sistema bancario.
+ Con el fin de entender un poco mejor cómo funcionan los sistemas de los
+ bancos, o al menos sus bases, y a su vez aprender mejor cómo operar sistemas
+ implementando recursividad y también investigar sobre el funcionamiento
+ de la opción nativa de manipulación y creación de archivos en python.
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Análisis del problema
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang spanish
+\begin_inset Graphics
+	filename ../Taller de Programacion/Trabajos_Practicos/TP1/doc_base/Imgs/casosUso.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang spanish
+Diagrama de casos de uso, construído en star UML.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-casos"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\lang spanish
+\begin_inset Graphics
+	filename /Users/franco/Desktop/Proyecto Sistema Bancario/diagrama_casos_uso.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Problema
+\end_layout
+
+\begin_layout Standard
+Diseñar un sistema bancario en el que existen dos tipos de usuarios: cliente
+ y banquero, el cual cada uno podrá acceder a distintas interfaces, tal
+ y como se muestra en la figura superior.
+ Para esto se definirá un menu principal en el que se le pida a la persona
+ ingresar que tipo de usuario es: banquero o cliente.
+\end_layout
+
+\begin_layout Standard
+Entradas: Banquero o Usuario, se les asigna un numero.
+\end_layout
+
+\begin_layout Enumerate
+Si elige banquero podrá crear un usuario o crear un banquero.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Entradas: Crear usuario o cajero.
+\end_layout
+
+\begin_layout Standard
+1.1 Si elige crear usuario debera ingresar el nombre del usuario.
+\end_layout
+
+\begin_layout Standard
+Entrada: Nombre del usuario.
+\end_layout
+
+\begin_layout Standard
+Salida: Notificacion sobre el resultado de la creación.
+\end_layout
+
+\begin_layout Standard
+1.2 Si elige crear cajero debera ingresar el nombre del cajero y la cantidad
+ de billetes por denominación.
+\end_layout
+
+\begin_layout Standard
+Entrada: Nombre del cajero y cantidad de billetes por denominación.
+\end_layout
+
+\begin_layout Standard
+Salida: Notificacion sobre el resultado de la creación.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Si elige usuario deberá ingresar el cajero que desea utilizar, su usuario
+ y el pin que se le entregó.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Entradas: Cajero a utilizar, nombre usuario y pin.
+\end_layout
+
+\begin_layout Standard
+Salidas: Acciones del usuario: Depositar dinero, retirar dinero, consultar
+ saldo y consultar historial.
+\end_layout
+
+\begin_layout Standard
+2.1 Si elige depositar: Deberá ingresar la cantidad de billetes que desea
+ ingresar por denominación.
+\end_layout
+
+\begin_layout Standard
+Entrada: Billetes que desea depositar por denominación.
+\end_layout
+
+\begin_layout Standard
+Salida: Notificación sobre el resultado del depósito.
+\end_layout
+
+\begin_layout Standard
+2.2 Si elige retirar: Deberá ingresar la cantidad de billetes que desea retirar
+ por denominación.
+\end_layout
+
+\begin_layout Standard
+Entradas: Billetes que desea retirar por denominación.
+\end_layout
+
+\begin_layout Standard
+Salida: Notificación sobre el resultado del retiro.
+\end_layout
+
+\begin_layout Standard
+2.3 Si elige consultar saldo:
+\end_layout
+
+\begin_layout Standard
+Salida: Saldo del usuario.
+\end_layout
+
+\begin_layout Standard
+2.4 Si elige consultar historial:
+\end_layout
+
+\begin_layout Standard
+Salida: Historial de transacciones del usuario.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Subproblemas
+\end_layout
+
+\begin_layout Enumerate
+Crear el menu principal que te permita ingresar a todos las demás interfaces.
+\end_layout
+
+\begin_layout Enumerate
+Guardar los datos de los cajeros y los datos de los usuarios en archivos
+ .txt.
+\end_layout
+
+\begin_layout Enumerate
+Actualizar los datos cuando se hagan depositos o retiros.
+\end_layout
+
+\begin_layout Enumerate
+Que los datos que se ingresen no sean los que el sistema solicita.
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Diseño de la solución
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\lang spanish
+\begin_inset Graphics
+	filename /Users/franco/Desktop/Proyecto Sistema Bancario/Diagrama de clases.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\lang spanish
+Controlador
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Se define el controlador como el menu principal.
+ Se abre pidiendo al usuario que defina si es un usuario o un banquero.
+ Para ello se le permite al usuario acceder mediante un input.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Si elige usuario pasa al menu de usuario y si elige banquero ingresa al
+ menu de banquero
+\end_layout
+
+\begin_layout Subsection*
+
+\lang spanish
+Menú banquero
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Se le muestra al banquero que acción desea realizar mediante un input, si
+ desea crear un usuario o un cajero.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Si elige crear usuario pasa a crear usuario y si elige crear cajero pasa
+ a crear cajero.
+\end_layout
+
+\begin_layout Subsubsection*
+Crear usuario
+\end_layout
+
+\begin_layout Standard
+Se le pide al banquero que ingrese el nombre del usuario que desee crear,
+ y el sistema verifica si cumple o no con la expresión regular.
+ Si no cumple le vuelve a pedir que ingrese el nombre.
+\end_layout
+
+\begin_layout Standard
+Si acepta el nombre del usuario, se le notifica y se genera un pin aleatorio
+ para el usuario.
+\end_layout
+
+\begin_layout Standard
+Se guarda la información del usuario en un archivo .txt
+\end_layout
+
+\begin_layout Subsubsection*
+Crear cajero
+\end_layout
+
+\begin_layout Standard
+Se le pide al banquero que ingrese el nombre del cajero que desee crear,
+ y el sistema verifica si cumple o no con la expresión regular.
+ Si no cumple le vuelve a pedir que ingrese el nombre.
+\end_layout
+
+\begin_layout Standard
+Si acepta el nombre del usuario, se le notifica y le pide que ingrese la
+ cantidad de billetes por denominación que desee definirle al cajero.
+\end_layout
+
+\begin_layout Standard
+Se guarda la información del usuario en un archivo .txt
+\end_layout
+
+\begin_layout Subsection*
+Menú Usuario
+\end_layout
+
+\begin_layout Standard
+Se le muestra al usuario los cajeros disponibles y se le pide que seleccione
+ el cajero que desea utilizar, si no ingresa un cajero válido se le vuelve
+ a solicitar que ingrese un cajero.
+\end_layout
+
+\begin_layout Standard
+Si acepta el cajero, se le pide al usuario que ingrese su nombre de usuario,
+ y el sistema verifica si existe, sino se le vuelve a pedir que ingrese
+ su usuario.
+\end_layout
+
+\begin_layout Standard
+Si acepta el usuario, le pide el pin aleatorio que se le otorgó, y el sistema
+ verifica si es el correcto, sino se le vuelve a pedir que ingrese su pin.
+\end_layout
+
+\begin_layout Standard
+Si acepta el pin, se le mostrará al usuario las distintas acciones que puede
+ realizar: depositar dinero, retirar dinero, consultar saldo o consultar
+ historial, esto se le pregunta mediante un input al usuario.
+\end_layout
+
+\begin_layout Standard
+Si ingresa una opción no válida, se le vuelve a pedir que ingrese la acción
+ a realizar.
+\end_layout
+
+\begin_layout Standard
+Si ingresa una opción valida, se le mostrará la interfaz de la acción que
+ eligió.
+\end_layout
+
+\begin_layout Subsubsection*
+Depositar dinero
+\end_layout
+
+\begin_layout Standard
+Se le pide al usuario que ingrese la cantidad de billetes por denominación
+ que desea depositar.
+ Después de eso se suma la cantidad de billetes por denominación al cajero
+ y también se suma el monto al usuario.
+ Se le notifica del resultado del depósito.
+ Y se actualizan los archivos .txt.
+\end_layout
+
+\begin_layout Subsubsection*
+Retirar dinero
+\end_layout
+
+\begin_layout Standard
+Se le pide al usuario que ingrese la cantidad de billetes por denominación
+ que desea retirar.
+ Después de eso se resta la cantidad de billetes por denominación al cajero
+ y también se le resta el monto al usuario.
+ Se le notifica del resultado del depósito.
+ Y se actualizan los archivos .txt.
+\end_layout
+
+\begin_layout Subsubsection*
+Consultar saldo
+\end_layout
+
+\begin_layout Standard
+Se leen los archivos .txt, y se le muestra al usuario su saldo disponible.
+\end_layout
+
+\begin_layout Subsubsection*
+Consultar historial
+\end_layout
+
+\begin_layout Standard
+Se leen los archivos .txt, y se le muestra al usuario su saldo disponible.
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Implementación
+\end_layout
+
+\begin_layout Standard
+Se utilizaron las opciones nativas de python para crear y manipular archivos
+ como open y las funciones 
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+r
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+r+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Tambien readlines(), replace(), split() y write().
+\end_layout
+
+\begin_layout Standard
+Se utilizó la librería random y la función randage para generar el pin aleatorio
+ del usuario.
+\end_layout
+
+\begin_layout Standard
+Y se utilizó la librería time, la función asctime() para obtener la hora
+ en que se realiza el retiro o el deposito del usuario.
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Pruebas para la creacion de usuarios
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Prueba 1 de creacion de usuarios
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta si el usuario es un usuario del banco, o un banquero:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El usuario selecciona la opcion de 
+\emph on
+banquero.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema despliega las opciones disponibles para un banquero.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El banquero selecciona la opcion 
+\emph on
+crear usuario
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta al banquero el nombre de usuario que se desea crear.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El banquero ingresa el nombre de usuario 
+\emph on
+saul1913
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema verifica el nombre de usuario ingresado y lo rechaza, informando
+ que el nombre usuario no cumple con las reglas de creacion del nombre de
+ usuario.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+\lang spanish
+Resultado esperado de la prueba: 
+\series default
+Se muestra en pantalla el mensaje de error informando al usuario que el
+ nombre de usuario ingresado no cumple con las reglas del sistema.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+
+\lang spanish
+Prueba 2 de creacion de usuarios
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta si el usuario es un usuario del banco, o un banquero:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El usuario selecciona la opcion de 
+\emph on
+banquero.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema despliega las opciones disponibles para un banquero.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El banquero selecciona la opcion 
+\emph on
+crear usuario
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta al banquero el nombre de usuario que se desea crear.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El banquero ingresa el nombre de usuario 
+\emph on
+josue1234!
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema acepta el usuario, y genera un pin con 4 digitos, de forma aleatoria.
+ El sistema informa al banquero del pin generado en pantalla.
+ Ademas la informacion se guarda en un archivo 
+\emph on
+csv 
+\emph default
+(comma separated values).
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+El sistema vuelve al menu principal.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+\lang spanish
+Resultado esperado de la prueba: 
+\series default
+Verificar que el archivo con la informacion de los usuarios 
+\emph on
+lista_usuarios.txt 
+\emph default
+contenga la informacion del nuevo usuario agregado, usando el esquema 
+\emph on
+csv
+\emph default
+: 
+\emph on
+nombre_usuario, josue1234?, pin, X, monto, 0, historial_transacciones,0.
+ 
+\emph default
+Ademas el sistema debe haber notificado que el usuario fue creado exitosamente.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+
+\lang spanish
+Pruebas para la creacion y manipulacion de cajeros
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Prueba 1 de creacion incorrecta de cajeros 
+\end_layout
+
+\begin_layout Enumerate
+El sistema despliega la opción de indicar si es un usuario o un banquero.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El usuario indica que es un banquero.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El sistema despliega las opciones disponibles para un banquero.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El banquero selecciona la opción de crear cajero.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El sistema despliega un mensaje solicitando el nombre de usuario que desea
+ ingresar al sistema.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El banquero ingresa el nombre de usuario del cajero: sau2
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El sistema verifica si el nombre de usuario del cajero cumple con los requisitos.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El sistema se devuelve al punto 3.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Resultado esperado de la prueba: 
+\series default
+El sistema despliega un mensaje de error informándole al usuario de el nombre
+ de usuario no cumple con los requisitos.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Prueba 2 de creacion correcta de cajeros
+\end_layout
+
+\begin_layout Enumerate
+El sistema despliega la opción de indicar si es un usuario o un banquero.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El usuario indica que es un banquero.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El sistema despliega las opciones disponibles para un banquero
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El banquero selecciona la opción crear cajero
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El sistema pregunta al banquero el identificador del cajero que desea crear
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El banquero ingresa el nombre de usuario GOK2424 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El sistema acepta el identificador del cajero y comprueba exitosamente que
+ el identificador es único.
+\end_layout
+
+\begin_layout Enumerate
+El sistema solicita la cantidad de billetes por denominacion:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El usuario ingresa 15 billetes de 100 pesos, 10 billetes de 50 pesos, 22
+ billetes de 20 pesos, 5 billetes de 10 pesos, 30 billetes de 5 pesos, 20
+ billletes de 2 pesos, 10 billetes de 1 peso.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El cajero al haber aceptado el identificador del cajero, guarda en un archivo
+ txt.
+ llamado lista_cajeros el identificador del cajero con la cantidad de billetes
+ de cada denominación ingresada por el banquero.
+ 
+\end_layout
+
+\begin_layout Enumerate
+El sistema le avisa al banquero que el cajero fue creado exitosamente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+El sistema vuelve al menu principal.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Resultado esperado de la prueba: 
+\series default
+Verificar que el archivo con la información de los cajeros lista_cajeros.txt
+ contenga la información del nuevo cajero agregado (usuario GOK2424 y con
+ la cantidad de billetes por denominacion 15 billetes de 100 pesos, 10 billetes
+ de 50 pesos, 22 billetes de 20 pesos, 5 billetes de 10 pesos, 30 billetes
+ de 5 pesos, 20 billletes de 2 pesos, 10 billetes de 1 peso).
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+
+\lang spanish
+Prueba 2 de agregado de billletes en cajero previamente existente
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\lang spanish
+Pre-requisitos de la prueba: 
+\series default
+Se debe ejecutar la
+\series bold
+ 
+\series default
+\emph on
+\lang english
+Prueba 2 de creacion correcta de cajeros 
+\emph default
+previamente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta si el usuario es un usuario del banco, o un banquero:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El usuario selecciona la opcion de 
+\emph on
+banquero.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema despliega las opciones disponibles para un banquero.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El banquero selecciona la opcion 
+\emph on
+agregar dinero a cajero
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta por el identificador del cajero al cual se le desea
+ depositar billetes.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El banquero inserta el siguiente identificador del cajero: 
+\lang english
+GOK2424
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta por la cantidad de billetes a depositar por cada denominacio
+n.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El banquero deposita 3 billetes de 100 pesos y 1 de 50 pesos.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema notifica al usuario que los billetes fueron depositados con exito
+ al cajero.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+El sistema vuelve a la pantalla de inicio.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Resultado esperado de la prueba: 
+\series default
+El archivo lista_cajeros.txt contiene una linea al menos donde se haya actualizad
+o la informacion de la cantidad de billetes por denominacion del cajero
+ con identificador GOK2424.
+ La cantidad de billetes por denominacion debe ser: 15 billetes de 100 pesos,
+ 11 billetes de 50 pesos, 22 billetes de 20 pesos, 5 billetes de 10 pesos,
+ 30 billetes de 5 pesos, 20 billletes de 2 pesos, 10 billetes de 1 peso.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+
+\lang spanish
+Pruebas de la interaccion del usuario del banco con los cajeros
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Prueba 1: Retiro de dinero de cajero existente
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\lang spanish
+Pre-requisitos
+\series default
+: se debe haber ejecutado la 
+\emph on
+prueba 2 de creacion de usuarios
+\emph default
+, con modificacion a su saldo disponible en el archivo de 5000 pesos.
+ Ademas se debe ejecutar la prueba 
+\emph on
+\lang english
+Prueba 2 de creacion correcta de cajeros.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta si el usuario es un usuario del banco, o un banquero:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El usuario selecciona la opcion de 
+\emph on
+usuario bancario.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta que cajero desea seleccionar:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El usuario selecciona el cajero con identificador GOK2424 (valido y previamente
+ creado).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta la accion a realizar por el usuario (opciones: retiro,
+ despliegue de historial de transacciones, despliegue de saldo o deposito)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El usuario selecciona la opcion de retiro de fondos.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema pregunta por el monto deseado a retirar.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El usuario ingresa el monto de 1825 pesos.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang spanish
+El sistema retorna el siguiente resultado: 15 billetes de 100 pesos, 6 billetes
+ de 50 pesos, 1 billete de 20 pesos, y finalmente 1 billete de 5 pesos.
+ El monto es debitado a la cuenta del usuario, y la transaccion se agrega
+ al historial de transacciones.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+\lang spanish
+Resultado esperado
+\series default
+: El sistema debe desplegar un mensaje informando que se retornan:15 billetes
+ de 100 pesos, 6 billetes de 50 pesos, 1 billete de 20 pesos, y finalmente
+ 1 billete de 5 pesos.
+ Ademas el monto debe haberse debitado en la cuenta, el historial de transaccion
+es debe reflejar la transaccion realizada, y el cajero debe tener la cantidad
+ de billetes: 
+\lang english
+0 billetes de 100 pesos, 5 billetes de 50 pesos, 21 billetes de 20 pesos,
+ 5 billetes de 10 pesos, 29 billetes de 5 pesos, 20 billletes de 2 pesos,
+ 10 billetes de 1 peso.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+
+\lang spanish
+Conclusiones y recomendaciones
+\end_layout
+
+\begin_layout Standard
+Las funciones del banquero operan bien, tanto crear usuario como crear banquero
+ y se almacenan de forma correcta.
+ Retirar y depositar dinero funcionan bien, pero no se guarda de manera
+ correcta y no sé encontró forma de arreglarlo, es decir, si se guarda bien
+ pero no deja volver a operar el cajero o el usuario actualizado despues
+ del retiro o depósito.
+ Consultar saldo funciona bien pero no se puede operar despues de que se
+ realiza un deposito o un retiro, al igual que consultar historial de transaccio
+nes.
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Bibliografía
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "Referencias_TP0"
+options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
